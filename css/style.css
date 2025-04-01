@@ -1,0 +1,232 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0c0c0f;
+  color: #f0f0f0;
+  font-family: 'Courier New', monospace;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #93f;
+}
+
+.subtitle {
+  font-style: italic;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Preview Section */
+.preview {
+  background: #111;
+  border: 2px dashed #333;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  min-height: 200px;
+  text-align: center;
+}
+
+.error-code {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: 1.25rem;
+  color: #ccc;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #222;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #444;
+}
+
+#theme-label {
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Footer */
+footer {
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
+/* === Themes === */
+
+/* Glitch Theme */
+.theme-glitch .error-code {
+  color: #ff0055;
+  position: relative;
+  animation: glitch 0.8s infinite;
+}
+
+.theme-glitch .error-message {
+  color: #ffb3d9;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Neon Theme */
+.theme-neon .error-code {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+}
+
+.theme-neon .error-message {
+  color: #aff;
+  text-shadow: 0 0 5px #aff;
+}
+
+/* Void Theme */
+.theme-void {
+  background: #000;
+}
+
+.theme-void .error-code {
+  color: #999;
+}
+
+.theme-void .error-message {
+  color: #666;
+  font-style: italic;
+}
+
+.theme-glitch {
+  background: linear-gradient(135deg, #0c0c0f, #1a001a);
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 20px #ff0055;
+}
+
+.theme-glitch .error-code {
+  color: #ff0055;
+  animation: glitch 0.8s infinite;
+  text-shadow: 1px 0 red, -1px 0 cyan;
+}
+
+.theme-glitch .error-message {
+  color: #ffcce5;
+  font-style: italic;
+}
+
+.theme-neon {
+  background: #000c1a;
+  border: 2px solid #00ffff;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+.theme-neon .error-code {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+.theme-neon .error-message {
+  color: #aff;
+  text-shadow: 0 0 8px #aff;
+}
+
+.theme-void {
+  background: radial-gradient(circle, #000 30%, #111 100%);
+  border: 2px solid #222;
+  box-shadow: inset 0 0 10px #000;
+}
+
+.theme-void .error-code {
+  color: #666;
+  font-weight: lighter;
+  opacity: 0.6;
+}
+
+.theme-void .error-message {
+  color: #555;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .preview {
+    padding: 1.5rem;
+    min-height: 150px;
+  }
+
+  .error-code {
+    font-size: 3rem;
+  }
+
+  .error-message {
+    font-size: 1rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .error-code {
+    font-size: 2.5rem;
+  }
+
+  .error-message {
+    font-size: 0.95rem;
+  }
+}
